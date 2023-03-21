@@ -1,11 +1,13 @@
-<nav class="-bg--navbar-footer-color hidden md:flex justify-center">
-  <div class="">
-    <div class="container">
-      <ul class="flex gap-4 text-lg py-3 -text--primary-color ">
-        <li><a href=""></a>Design</li>
-        <li><a href=""></a>Inspiration</li>
-        <li><a href=""></a>Sports</li>
-        <li><a href=""></a>Politcs</li>
+<nav class="container flex overflow-x-scroll mx-auto -bg--navbar-footer-color">
+  <div class="items-center justify-center text-center mx-auto w-max px-4">
+    <div class="flex gap-4 text-lg py-3 text-white">
+      <ul class="w-max" *ngFor="let category of categoryArray">
+        <li
+          class="bg-[#026467] hover:cursor-pointer rounded-lg px-4"
+          [routerLink]="['/category' ,category.data.category, category.id]"
+        >
+          {{ category.data.category }}
+        </li>
       </ul>
     </div>
   </div>

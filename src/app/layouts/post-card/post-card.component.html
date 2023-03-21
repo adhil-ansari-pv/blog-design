@@ -1,18 +1,26 @@
-<div class="w-[350px] shadow-lg m-4">
-  <img class="h-[250px]" src="https://images.pexels.com/photos/1618269/pexels-photo-1618269.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="">
-  <div class="flex flex-col gap-1 p-4 bg-white">
-
+<div class="w-[350px] m-4 bg-slate-200 shadow-2xl" *ngIf="postData" [routerLink]="['/post' , postData.id]">
+  <img class="h-[250px]" src="{{ postData.data.postImgPath }}" alt="" />
+  <div
+    class="flex min-h-[200px] overflow-y-auto py-1 flex-col gap-1 p-4 bg-white"
+  >
     <div class="flex gap-3">
-      <p class="text-center text-red-500">Design</p>
-      <p class="text-center text-green-500">Featured</p>
-      <p class="text-center text-blue-500">views -12833</p>
+      <p class="text-center text-red-500">
+        {{ postData.data.category.category }}
+      </p>
+      <div *ngIf="postData.data.isFeatured">
+      <p class="text-center text-green-500"  >Featured</p>
+      </div>
+      <div>
+        <p class="text-center text-blue-500">views -{{ postData.data.views }}</p>
+      </div>
     </div>
-    <p class="text-lg leading-5">HOW TO START A BLOG IN 2023 EDITTED NEW CATEGORY</p>
-    <P class="text-zinc-600">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit nisi ipsa eligendi unde laboriosam nesciunt necessitatibus, temporibus in voluptate, libero nobis molestias consectetur delectus!</P>
-
-    <p class="text-center text-red-400">last Updated - 23 sep 2022</p>
-
-
+    <p class="text-red-400 my-1">
+      last Updated - {{ postData.data.createdAt.toMillis() | date }}
+    </p>
+    <p class="text-lg leading-5">{{ postData.data.title }}</p>
+    <P class="text-zinc-600 h-20 break-words text-justify">{{
+      postData.data.excerpt
+    }}</P>
   </div>
 </div>
 <!-- max-w-sm -->

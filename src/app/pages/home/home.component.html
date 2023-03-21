@@ -1,15 +1,23 @@
-<section class="flex justify-center items-center p-4 -bg--primary-color">
-  <div class="md:w-full">
+<section class="flex flex-col justify-center h-full items-center p-4 ">
+  <div class="md:w-full -bg--primary-color">
     <div class="flex flex-col py-3 text-white items-center justify-center">
       <p class="text-lg md:text-2xl">Featured Posts</p>
       <p class="text-sm text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
     </div>
     <div class="flex items-center justify-center w-full">
       <div class="flex flex-col items-center justify-center md:flex-row md:flex md:flex-wrap md:justify-center md:items-center">
-        <app-post-card></app-post-card>
-        <app-post-card></app-post-card>
-        <app-post-card></app-post-card>
-        <app-post-card></app-post-card>
+        <app-post-card class="" *ngFor="let featuredPost of featuredPostsArray" [postData]="featuredPost"></app-post-card>
+      </div>
+    </div>
+  </div>
+  <div class="md:w-full bg-white text-black">
+    <div class="flex flex-col py-3 items-center justify-center">
+      <p class="text-lg md:text-2xl">Latest Posts</p>
+      <p class="text-sm text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+    <div class="flex items-center justify-center w-full">
+      <div class="flex flex-col items-center justify-center md:flex-row md:flex md:flex-wrap md:justify-center md:items-center">
+        <app-post-card class="" *ngFor="let latestPosts of latestPostsArrray" [postData]="latestPosts"></app-post-card>
       </div>
     </div>
   </div>

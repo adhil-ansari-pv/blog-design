@@ -1,17 +1,30 @@
-<div class="flex items-center justify-center shadow-lg shadow-slate-300">
-
+<div class="flex items-center justify-center shadow-lg mt-4 shadow-slate-300">
   <div
     class="flex md:container w-full flex-col h-full justify-center items-center md:gap-y-3 -text--primary-color bg-[#9fbbb1] p-4 rounded-lg shadow-xl">
-    <p class="md:text-3xl text-2xl  ">SUBSCRIPTOIN FORM</p>
+    <p class="md:text-3xl text-2xl">SUBSCRIPTOIN FORM</p>
     <P class="text-base text-slate-500 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.</P>
-    <form class="md:flex md:flex-row md:items-center flex flex-col justify-center gap-2 p-4 w-full ">
-      <input type="text" class="p-4 text-sm rounded-lg w-full " placeholder="Your Name">
-      <input type="text" class="p-4 text-sm rounded-lg w-full " placeholder="Email Address">
+    <P class="text-base text-red-600 text-center bg-white px-4" *ngIf="isEmailError">Email is already in use</P>
+    <P class="text-base text-green-600 text-center bg-white px-4" *ngIf="iaSubscribed">Thank you for subscribing our newsletter service. Stay tuned for Awsome blog posts...</P>
+
+    <form class="md:flex md:flex-row md:items-center flex flex-col justify-center gap-2 p-4 w-full" #subForm="ngForm"
+      (ngSubmit)="onSubmit(subForm.value)" *ngIf="!iaSubscribed">
+      <input type="text" class="p-4 text-sm rounded-lg w-full" placeholder="Your Name" name="name" #Name="ngModel"
+        ngModel required />
+      <div *ngIf="Name.touched && Name.invalid" class="text-sm text-red-600">
+        <div *ngIf="Name.errors?.['required']">Name is Required</div>
+      </div>
+      <input type="text" class="p-4 text-sm rounded-lg w-full" placeholder="Email Address" name="email" #Email="ngModel"
+        ngModel required email />
+      <div *ngIf="Email.touched && Email.invalid" class="text-sm text-red-600">
+        <div *ngIf="Email.errors?.['required']">Email is Required</div>
+        <div *ngIf="Email.errors?.['email']">please enter a valid email address</div>
+
+      </div>
       <button
-        class="bg-blue-600 text-sm hover:bg-blue-700 rounded-lg text-white font-bold py-4 px-6 border border-blue-700">
+        class="bg-blue-600 text-sm hover:bg-blue-700 rounded-lg text-white font-bold py-4 px-6 border border-blue-700"
+        [disabled]="subForm.invalid">
         SUBSCRIBE
       </button>
     </form>
   </div>
-
 </div>
