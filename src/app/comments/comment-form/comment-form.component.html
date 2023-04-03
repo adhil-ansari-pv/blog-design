@@ -1,23 +1,34 @@
 <div class="flex items-center justify-center shadow-lg shadow-slate-300 p-4">
   <div
-    class="flex md:w-[1200px] w-full flex-col h-full justify-center items-center md:gap-y-3 -text--primary-color bg-[#e4eeea] rounded-lg shadow-xl">
-    <form class="w-full flex flex-col gap-2 p-4 ">
+    class="flex md:w-[1200px] w-full flex-col h-full justify-center items-center md:gap-y-3 -text--primary-color bg-white bg-opacity-10 rounded-2xl shadow-5xl border border-r-0 border-b-0 border-opacity-30 backdrop-filter backdrop-blur-sm"
+  >
+    <form class="w-full flex flex-col gap-2 p-4">
       <p class="md:text-3xl text-2xl text-center">Leave a Comment</p>
       <div class="flex flex-col w-full">
         <label class="text-lg" for="">Name</label>
-        <input type="text" class="p-4 text-sm rounded-lg w-full" placeholder="Enter Your Name">
+        <input
+          type="text"
+          class="p-4 text-sm rounded-lg w-full"
+          placeholder="Enter Your Name"
+        />
       </div>
       <div class="flex flex-col w-full">
         <label for="" class="text-lg">Comment</label>
-        <textarea name="" class="w-full text-base" id="" cols="30" rows="10" placeholder="Add your comment here">
-
+        <textarea
+          name=""
+          class="w-full text-base"
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="Add your comment here"
+        >
         </textarea>
       </div>
       <button
-        class="bg-blue-600 text-sm hover:bg-blue-700 rounded-lg text-white font-bold py-4 px-6 border border-blue-700">
+        class="bg-blue-600 text-sm hover:bg-blue-700 rounded-lg text-white font-bold py-4 px-6 border border-blue-700"
+      >
         Add a comment
       </button>
     </form>
   </div>
-
 </div>

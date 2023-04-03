@@ -24,6 +24,8 @@ export class SubscriptionFormComponent {
     if(val.empty){
       this.subService.addSubs(subData);
       this.iaSubscribed = true
+      this.isEmailError=false
+
     }
     else{
       this.isEmailError =true

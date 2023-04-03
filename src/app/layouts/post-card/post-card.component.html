@@ -1,26 +1,35 @@
-<div class="w-[350px] m-4 bg-slate-200 shadow-2xl" *ngIf="postData" [routerLink]="['/post' , postData.id]">
-  <img class="h-[250px]" src="{{ postData.data.postImgPath }}" alt="" />
+<div
+  class="w-[350px] m-4 bg-white bg-opacity-10 rounded-2xl shadow-5xl border border-r-0 border-b-0 border-opacity-30 backdrop-filter overflow-hidden transition-all duration-300 ease-in-out hover:scale-105"
+  *ngIf="postData"
+  [routerLink]="['/post', postData.id]"
+>
+  <img
+    class="h-[250px] hover:scale-95  transition-all duration-300"
+    src="{{ postData.data.postImgPath }}"
+    alt=""
+  />
   <div
-    class="flex min-h-[200px] overflow-y-auto py-1 flex-col gap-1 p-4 bg-white"
+    class="flex min-h-[200px] overflow-y-auto py-1 flex-col gap-1 p-4 bg-white bg-opacity-5"
   >
     <div class="flex gap-3">
       <p class="text-center text-red-500">
         {{ postData.data.category.category }}
       </p>
       <div *ngIf="postData.data.isFeatured">
-      <p class="text-center text-green-500"  >Featured</p>
+        <p class="text-center text-green-500">Featured</p>
       </div>
       <div>
-        <p class="text-center text-blue-500">views -{{ postData.data.views }}</p>
+        <p class="text-center text-blue-500">
+          views -{{ postData.data.views }}
+        </p>
       </div>
     </div>
     <p class="text-red-400 my-1">
       last Updated - {{ postData.data.createdAt.toMillis() | date }}
     </p>
-    <p class="text-lg leading-5">{{ postData.data.title }}</p>
-    <P class="text-zinc-600 h-20 break-words text-justify">{{
+    <p class="text-lg leading-5 text-yellow-50">{{ postData.data.title }}</p>
+    <P class="text-white/90 h-20 break-words text-justify">{{
       postData.data.excerpt
     }}</P>
   </div>
 </div>
-<!-- max-w-sm -->

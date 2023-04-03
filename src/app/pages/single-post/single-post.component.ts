@@ -10,6 +10,13 @@ import { PostsService } from 'src/app/services/posts.service';
 export class SinglePostComponent implements OnInit{
   postData:any;
   similiarPostArray:any
+  postImgpath!: string;
+  category!:string;
+  isFeatured!:boolean;
+  views!:number;
+  createdAt:any
+
+
   constructor(private route:ActivatedRoute , private postService:PostsService){}
   ngOnInit(): void {
     this.route.params.subscribe(val=>{
@@ -17,6 +24,11 @@ export class SinglePostComponent implements OnInit{
       this.postService.loadOnePost(val['id']).subscribe(post=>{
         this.postData = post;
         this.loadSimiliarPosts(this.postData.category.categoryId)
+        this.postImgpath = this.postData.postImgPath
+        this.category = this.postData.category.category
+        this.isFeatured=this.postData.isFeatured
+        this.views =this.postData.views
+        this.createdAt =this.postData.createdAt
       })
     });
   }

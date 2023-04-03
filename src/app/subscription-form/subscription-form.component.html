@@ -1,9 +1,9 @@
-<div class="flex items-center justify-center shadow-lg mt-4 shadow-slate-300">
+<div class="flex items-center justify-center bg-gradient-to-r from-[#000000] via-gray-900 to-[#19042c] bg-cover">
   <div
-    class="flex md:container w-full flex-col h-full justify-center items-center md:gap-y-3 -text--primary-color bg-[#9fbbb1] p-4 rounded-lg shadow-xl">
+    class="flex md:container w-full flex-col h-full justify-center items-center md:gap-y-3 -text--primary-color bg-white bg-opacity-10 mb-2 shadow-5xl backdrop-filter backdrop-blur-sm  p-4 rounded-lg shadow-xl">
     <p class="md:text-3xl text-2xl">SUBSCRIPTOIN FORM</p>
     <P class="text-base text-slate-500 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.</P>
-    <P class="text-base text-red-600 text-center bg-white px-4" *ngIf="isEmailError">Email is already in use</P>
+    <P class="text-base text-red-600 text-center bg-white px-4" *ngIf="isEmailError && !iaSubscribed">Email is already in use</P>
     <P class="text-base text-green-600 text-center bg-white px-4" *ngIf="iaSubscribed">Thank you for subscribing our newsletter service. Stay tuned for Awsome blog posts...</P>
 
     <form class="md:flex md:flex-row md:items-center flex flex-col justify-center gap-2 p-4 w-full" #subForm="ngForm"

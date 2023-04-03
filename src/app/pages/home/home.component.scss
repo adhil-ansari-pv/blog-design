@@ -1,0 +1,88 @@
+// .parallax {
+//   height: 600px;
+//   width: 400px;
+//   margin: 0 auto;
+//   position: relative;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+
+//   & * {
+//       transform-style: preserve-3d;
+//       perspective: 1000px;
+//   }
+
+//   .profile {
+//       width: 200px;
+//       height: 400px;
+//       border-radius: 1rem;
+//       background-color: #FFF;
+
+//       .profile-header {
+//           position: relative;
+//           height: 180px;
+
+//           img {
+//               border-radius: 1rem;
+//           }
+
+//           .profile-header-picture {
+//               position: absolute;
+//               top: 50px;
+//               left: 41px;
+//               border-radius: 50%;
+//               width: 118px;
+//               height: 118px;
+//               margin: 0 auto;
+//               background-image: url('../../../assets/_ac6b5295-1530-4453-9bb1-0023f8d7d4a4.jpeg');
+//               background-position: center;
+//               background-size: contain;
+//           }
+//           .profile-header-plus {
+//               display: inline-block;
+//               position: absolute;
+//               left: 120px;
+//               top: 135px;
+//               color: #DDD;
+//               border-radius: 50%;
+//               background-color: #FFF;
+//               padding: 8px;
+//               -webkit-box-shadow: 2.5px 5px 5px 0px #00000010;
+//               box-shadow: 2.5px 5px 5px 0px #00000010;
+//               cursor: pointer;
+
+//               svg {
+//                   width: 24px;
+//                   height: 24px;
+//                   vertical-align: middle;
+//               }
+//           }
+//       }
+
+//       .profile-content {
+//           padding: 0 1rem 1rem 1rem;
+//           height: 220px;
+
+//           .profile-content-title {
+//               font-family: 'Oswald', sans-serif;
+//               font-size: 1.25rem;
+//           }
+
+//           .profile-content-btn {
+//               background-color: #3D5DFF;
+//               outline: none;
+//               border: none;
+//               padding: 0.5rem 1rem;
+//               border-radius: 0.5rem;
+//               font-family: 'Oswald', sans-serif;
+//               color: #FFF;
+//               margin: 0 auto;
+//               display: block;
+//               border-radius: 2rem;
+//               -webkit-box-shadow: 2.5px 5px 5px 0px #00000010;
+//               box-shadow: 2.5px 2.5px 5px 0px #00000030;
+//               cursor: pointer;
+//           }
+//       }
+//   }
+// }

@@ -12,7 +12,6 @@ categoryArray!:any
   ngOnInit(): void {
     this.categoryService.loadData().subscribe(val=>{
       this.categoryArray = val
-      console.log(this.categoryArray.data.category);
     })
   }
 

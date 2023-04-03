@@ -1,30 +1,34 @@
-<div class="flex justify-center ">
-  <section class="container flex flex-col md:flex-row  justify-center">
-
-    <div class="flex-1 shadow-lg m-4">
-      <img class="w-full"
-        src="{{postData.postImgPath}}"
-        alt="">
-      <div class="flex flex-col gap-1 p-4 bg-white">
-
+<div
+  class="flex justify-center bg-gradient-to-r from-[#000000] via-gray-900 to-[#19042c]"
+>
+  <section class="container flex  flex-col md:flex-row items-center md:items-start justify-center">
+    <div class="w-auto md:w-[700px] shadow-lg m-4">
+      <img class="w-full mt-24" src="{{ postImgpath }}" alt="" />
+      <div class="flex flex-col gap-1 p-4">
         <div class="flex gap-3">
-          <p class="text-center text-red-500">{{postData.category.category}}</p>
-          <div *ngIf="postData.isFeatured">
-            <p class="text-center text-green-500"  >Featured</p>
-            </div>
-          <p class="text-center text-blue-500">VIEWS - {{postData.views}}</p>
+          <p class="text-center text-red-500">
+            {{ category }}
+          </p>
+          <div *ngIf="isFeatured">
+            <p class="text-center text-green-500">Featured</p>
+          </div>
+          <p class="text-center text-blue-500">VIEWS - {{views }}</p>
         </div>
-        <p class="text-left text-red-400">last Updated - {{postData.createdAt.toMillis() | date}}</p>
-        <p class="text-lg leading-5 ">{{postData.title}}</p>
-        <P class="text-zinc-600 text-base" [innerHTML]="postData.content"></P>
+        <p class="text-left text-red-400">
+          last Updated - {{ createdAt.toMillis() | date }}
+        </p>
+        <p class="text-lg leading-5 text-white">{{ postData.title }}</p>
+        <P class="text-slate-300 text-base" [innerHTML]="postData.content"></P>
       </div>
       <app-comment-form></app-comment-form>
       <app-comment-list></app-comment-list>
     </div>
 
-        <div class="flex  flex-col  items-center " >
-          <app-post-card *ngFor="let similiarpost of similiarPostArray" [postData]="similiarpost"></app-post-card>
-
+    <div class="flex flex-col items-center md:flex-initial mt-24">
+      <app-post-card
+        *ngFor="let similiarpost of similiarPostArray"
+        [postData]="similiarpost"
+      ></app-post-card>
     </div>
   </section>
 </div>

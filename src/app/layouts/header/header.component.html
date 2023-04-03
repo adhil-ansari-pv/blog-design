@@ -1,10 +1,52 @@
-<header
-  class="flex bg-white sticky top-0 z-30 w-full shadow-2xl text-gray-600 justify-center items-center text-lg h-16">
-  <div class="container flex items-center justify-between md:justify-center px-2">
-    <a routerLink="/" class="-bg--secondary-color py-1 px-5 rounded-3xl -text--primary-color"> MY-BLOG </a>
-    <span
-      class="md:hidden material-symbols-rounded text-3xl font-bold hover:text-blue-500 hover:bg-slate-100 rounded-lg p-2">
-      menu
-    </span>
+<nav>
+  <div class="container flex items-center justify-between mx-auto">
+    <a routerLink="/">
+      <img class="w-14" src="../../../assets/Group 27.png" alt="" />
+    </a>
+    <input
+      type="checkbox"
+      name="hamburger"
+      id="hamburger"
+      class="peer hidden"
+    />
+    <label
+      class="peer-checked:hamburger block cursor-pointer p-2 md:hidden"
+      for="hamburger"
+    >
+      <div
+        class="m-auto h-0.5 w-6 rounded bg-white transition duration-300"
+      ></div>
+      <div
+        class="m-auto mt-2 h-0.5 w-6 rounded bg-white transition duration-300"
+      ></div>
+    </label>
+    <div
+      class="absolute inset-x-0 top-20 flex -translate-x-full flex-col items-center gap-8 bg-slate-800 py-8 opacity-0 transition duration-300 peer-checked:translate-x-0 peer-checked:opacity-100 md:relative md:top-0 md:translate-x-0 md:flex-row md:bg-transparent md:py-0 md:opacity-100 text-base"
+    >
+      <button
+        href="#about"
+        class="text-white hover:border-b hover:border-white hover:pb-2 transition-all duration-300"
+      >
+        About
+      </button>
+      <button
+        href="#skills"
+        class="text-white hover:border-b hover:border-white hover:pb-2 transition-all duration-300"
+      >
+        What I do
+      </button>
+      <button
+        href="#portfolio"
+        class="text-white hover:border-b hover:border-white hover:pb-2 transition-all duration-300"
+      >
+        Work
+      </button>
+      <button
+        href="#contact"
+        class="text-white hover:border-b hover:border-white hover:pb-2 transition-all duration-300"
+      >
+        Contact
+      </button>
+    </div>
   </div>
-</header>
+</nav>

@@ -1,9 +1,9 @@
-<nav class="container flex overflow-x-scroll mx-auto -bg--navbar-footer-color">
+<div class=" flex overflow-x-auto mx-auto bg-gradient-to-r from-[#000000] via-gray-900 to-[#19042c] bg-cover">
   <div class="items-center justify-center text-center mx-auto w-max px-4">
     <div class="flex gap-4 text-lg py-3 text-white">
       <ul class="w-max" *ngFor="let category of categoryArray">
         <li
-          class="bg-[#026467] hover:cursor-pointer rounded-lg px-4"
+          class="-bg--primary-color hover:cursor-pointer rounded-lg px-4 hover:animate-pulse"
           [routerLink]="['/category' ,category.data.category, category.id]"
         >
           {{ category.data.category }}
@@ -11,4 +11,4 @@
       </ul>
     </div>
   </div>
-</nav>
+</div>
